@@ -4,17 +4,18 @@ This repository contains scripts to automate the installation and configuration 
 
 ## 📂 Contents
 
-- **`install_..._server.sh`**: The main script for installing and configuring the server.
-- **`install.sh`**: An optional script containing specific installation instructions for additional software or configurations.
-- **`docker-compose.yml`**: to setup your docker-orchester
+- **`debian.sh`**: The main script for installing and configuring the server on Debian-based distributions.
+- **`opensuse.sh`**: The main script for installing and configuring the server on openSUSE.
+- **`specific-install-instructions.sh`**: An optional script containing specific installation instructions for additional software or configurations that apply across multiple distributions.
+- **`docker-compose.yml`**: A sample Docker Compose file to set up your Docker environment.
 
 ## 🛠️ Requirements
 
-- Linux distribution (tested on Debian)
+- A compatible Linux distribution (Debian-based, openSUSE, etc.)
 - Root access to the system
 
 > [!WARNING]   
-> Please make sure you have root privileges before running the script. Without proper permissions, the installation will fail.
+> Please ensure you have root privileges before running the script. Without proper permissions, the installation will fail.
 
 ## 🚀 Installation
 
@@ -24,20 +25,24 @@ This repository contains scripts to automate the installation and configuration 
    cd serverinstaller
    ```
 
-2. **Make the installation script executable:**
-   ```bash
-   chmod +x install_debian_server.sh
-   ```
+2. **Choose the appropriate installation script for your distribution:**
+   - For Debian-based systems:
+     ```bash
+     chmod +x debian.sh
+     ./debian.sh
+     ```
+   - For openSUSE systems:
+     ```bash
+     chmod +x opensuse.sh
+     ./opensuse.sh
+     ```
 
-3. **Run the script as the root user:**
-   ```bash
-   ./install_debian_server.sh
-   ```
+3. **Run the script as the root user.**
 
-4. **Optional:** If there is an `install.sh` file in the directory, it will be automatically executed after the main installation completes.
+4. **Optional:** If there is a `specific-install-instructions.sh` file in the directory, it will be automatically executed after the main installation completes.
 
 > [!NOTE]  
-> The `install.sh` script is useful for executing custom setup tasks that are specific to your environment.
+> The `specific-install-instructions.sh` script is useful for executing custom setup tasks that are specific to your environment.
 
 ## 🌟 Features
 
@@ -50,7 +55,7 @@ This repository contains scripts to automate the installation and configuration 
 - **Nano as Default Editor:** `nano` will be set as the default text editor.
 
 > [!TIP]  
-> The scripts are modular, so you can easily adapt them to fit your specific requirements by modifying the provided `install.sh`.
+> The scripts are modular, so you can easily adapt them to fit your specific requirements by modifying the provided `specific-install-instructions.sh`.
 
 ## 📜 License
 
@@ -58,4 +63,3 @@ This project is licensed under the MIT License. See the `LICENSE` file for more 
 
 > [!IMPORTANT]  
 > Contributions are welcome! If you find any issues or have suggestions, feel free to open an issue or submit a pull request.
-
