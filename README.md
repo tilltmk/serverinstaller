@@ -1,0 +1,2 @@
+# serverinstaller
+🖥️ server install skripts
