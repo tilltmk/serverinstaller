@@ -6,6 +6,7 @@ This repository contains scripts to automate the installation and configuration 
 
 - **`install_debian_server.sh`**: The main script for installing and configuring the server.
 - **`install.sh`**: An optional script containing specific installation instructions for additional software or configurations.
+- **`docker-compose.yml`**: to setup your docker-orchester
 
 ## 🛠️ Requirements
 
