@@ -19,7 +19,7 @@ zypper install -y \
     clamav \
     clamtk \
     apparmor \
-    unattended-upgrades \
+    yast2-online-update-configuration  \
     xfce4 \
     lightdm \
     lightdm-gtk-greeter
