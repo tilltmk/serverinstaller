@@ -1,16 +1,16 @@
 # 🚀 Server Installer
 
-This repository contains scripts to automate the installation and configuration of a Debian server. The scripts include the setup of Docker, Docker Compose, Git, and other useful tools. Additionally, an XFCE desktop environment will be installed.
+This repository contains scripts to automate the installation and configuration of a Linux server. The scripts include the setup of Docker, Docker Compose, Git, and other useful tools. Additionally, an XFCE desktop environment will be installed.
 
 ## 📂 Contents
 
-- **`install_debian_server.sh`**: The main script for installing and configuring the server.
+- **`install_..._server.sh`**: The main script for installing and configuring the server.
 - **`install.sh`**: An optional script containing specific installation instructions for additional software or configurations.
 - **`docker-compose.yml`**: to setup your docker-orchester
 
 ## 🛠️ Requirements
 
-- A Debian-based Linux distribution (tested on Debian)
+- Linux distribution (tested on Debian)
 - Root access to the system
 
 > [!WARNING]   
