@@ -45,7 +45,7 @@ This repository contains scripts to automate the installation and configuration 
 - **ClamAV Antivirus:** A virus scanner that is activated and kept updated automatically.
 - **AppArmor:** A security framework that is installed and enabled by default.
 - **Docker & Docker Compose:** For container orchestration.
-- **XFCE Desktop Environment:** A lightweight desktop environment suitable for remote management.
+- **XFCE Desktop Environment and Lightdm:** A lightweight desktop environment suitable for remote management.
 - **German Keyboard Layout and Locale:** The system will be configured to use the German keyboard layout and locale.
 - **Nano as Default Editor:** `nano` will be set as the default text editor.
 
