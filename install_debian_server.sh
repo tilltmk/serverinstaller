@@ -21,7 +21,9 @@ apt-get install -y \
     clamtk \
     apparmor \
     unattended-upgrades \
-    locales
+    locales \
+    lightdm \
+    lightdm-gtk-greeter
 
 # Automatische Updates aktivieren
 dpkg-reconfigure --priority=low unattended-upgrades
@@ -59,6 +61,28 @@ sed -i 's/^# de_DE.UTF-8 UTF-8/de_DE.UTF-8 UTF-8/' /etc/locale.gen
 locale-gen
 update-locale LANG=de_DE.UTF-8
 
+# LightDM als Standard-Display-Manager setzen
+echo "/usr/sbin/lightdm" > /etc/X11/default-display-manager
+
+# LightDM-Konfiguration für XFCE anpassen
+cat <<EOL > /etc/lightdm/lightdm.conf
+[Seat:*]
+greeter-session=lightdm-gtk-greeter
+user-session=xfce
+EOL
+
+# Beispielhafte Anpassungen des LightDM-Greeters
+cat <<EOL > /etc/lightdm/lightdm-gtk-greeter.conf
+[greeter]
+background=/usr/share/backgrounds/xfce/default.jpg
+theme-name=Greybird
+icon-theme-name=elementary-xfce-dark
+font-name=Sans 11
+xft-antialias=true
+xft-hintstyle=hintfull
+xft-rgba=rgb
+EOL
+
 # Ausführen eines spezifischen install.sh Skripts, falls vorhanden
 if [ -f ./install.sh ]; then
     chmod +x ./install.sh
@@ -81,4 +105,4 @@ htop --version
 nano --version
 clamdscan --version
 apparmor_status
-echo "XFCE Desktop Environment und andere Pakete wurden erfolgreich installiert und konfiguriert."
+echo "XFCE Desktop Environment, LightDM und andere Pakete wurden erfolgreich installiert und konfiguriert."
