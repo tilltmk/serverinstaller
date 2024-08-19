@@ -12,7 +12,7 @@ This repository contains scripts to automate the installation and configuration 
 - A Debian-based Linux distribution (tested on Debian)
 - Root access to the system
 
-> **⚠️ Warning:**  
+> [!WARNING]   
 > Please make sure you have root privileges before running the script. Without proper permissions, the installation will fail.
 
 ## 🚀 Installation
@@ -35,7 +35,7 @@ This repository contains scripts to automate the installation and configuration 
 
 4. **Optional:** If there is an `install.sh` file in the directory, it will be automatically executed after the main installation completes.
 
-> **💡 Note:**  
+> [!NOTE]  
 > The `install.sh` script is useful for executing custom setup tasks that are specific to your environment.
 
 ## 🌟 Features
@@ -48,13 +48,13 @@ This repository contains scripts to automate the installation and configuration 
 - **German Keyboard Layout and Locale:** The system will be configured to use the German keyboard layout and locale.
 - **Nano as Default Editor:** `nano` will be set as the default text editor.
 
-> **🔍 Tip:**  
+> [!TIP]  
 > The scripts are modular, so you can easily adapt them to fit your specific requirements by modifying the provided `install.sh`.
 
 ## 📜 License
 
 This project is licensed under the MIT License. See the `LICENSE` file for more details.
 
-> **📢 Important:**  
+> [!IMPORTANT]  
 > Contributions are welcome! If you find any issues or have suggestions, feel free to open an issue or submit a pull request.
 
