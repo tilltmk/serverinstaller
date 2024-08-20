@@ -19,7 +19,6 @@ apt-get install -y \
     nano \
     clamav \
     clamtk \
-    apparmor \
     unattended-upgrades \
     locales \
     lightdm \
@@ -42,8 +41,11 @@ tasksel install xfce-desktop
 update-alternatives --set editor /bin/nano
 
 # Docker-Setup
-systemctl enable docker
+systemctl enable --now docker
 systemctl start docker
+
+docker volume create --name=portainer_data
+echo "flame_password" > password
 
 # Docker Compose-Datei installieren und ausführen
 if [ -f ./docker-compose.yml ]; then
