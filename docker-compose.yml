@@ -10,6 +10,8 @@ services:
       - '81:81' # Admin Web Port
     environment:
       - DISABLE_IPV6=true
+    networks:
+      - webproxy
 
   portainer:
     image: ngxson/portainer-ce-without-annoying:latest
@@ -21,11 +23,15 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - portainer_data:/data
+    networks:
+      - webproxy
 
   watchtower:
     image: containrrr/watchtower
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - webproxy
 
   uptime-kuma:
     image: louislam/uptime-kuma:1
@@ -35,6 +41,8 @@ services:
       - "3001:3001"
     volumes:
       - uptime-kuma:/app/data
+    networks:
+      - webproxy
 
   flame:
     image: pawelmalak/flame
@@ -43,13 +51,15 @@ services:
       - /opt/flame:/app/data
       - /var/run/docker.sock:/var/run/docker.sock # optional but required for Docker integration
     ports:
-      - "3000:5005"
+      - "5005:5005"
     secrets:
       - password # optional but required for (1)
     environment:
       - PASSWORD=flame_password
       - PASSWORD_FILE=/run/secrets/password # optional but required for (1)
     restart: unless-stopped
+    networks:
+      - webproxy
 
 secrets:
   password:
@@ -59,3 +69,7 @@ volumes:
   uptime-kuma:
   portainer_data:
     external: true
+
+networks:
+  webproxy:
+    driver: bridge
