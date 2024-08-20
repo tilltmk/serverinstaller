@@ -85,10 +85,10 @@ EOL
 
 # Ausführen eines spezifischen install.sh Skripts, falls vorhanden
 if [ -f ./install.sh ]; then
-    chmod +x ./install.sh
-    ./install.sh
+    chmod +x ./specific-install-instructions.sh.sh
+    ./specific-install-instructions.sh.sh
 else
-    echo "Keine install.sh Datei im aktuellen Verzeichnis gefunden."
+    echo "Keine specific-install-instructions.sh.sh Datei im aktuellen Verzeichnis gefunden."
 fi
 
 # Abschließende Überprüfung und Meldung
