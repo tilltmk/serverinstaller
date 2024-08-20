@@ -1,1 +1,61 @@
+version: '3.7'
 
+services:
+  app:
+    image: 'jc21/nginx-proxy-manager:latest'
+    restart: always
+    ports:
+      - '80:80' # Public HTTP Port
+      - '443:443' # Public HTTPS Port
+      - '81:81' # Admin Web Port
+    environment:
+      - DISABLE_IPV6=true
+
+  portainer:
+    image: ngxson/portainer-ce-without-annoying:latest
+    container_name: portainer
+    restart: always
+    ports:
+      - "8000:8000"
+      - "9443:9443"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data
+
+  watchtower:
+    image: containrrr/watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
+  uptime-kuma:
+    image: louislam/uptime-kuma:1
+    container_name: uptime-kuma
+    restart: always
+    ports:
+      - "3001:3001"
+    volumes:
+      - uptime-kuma:/app/data
+
+  flame:
+    image: pawelmalak/flame
+    container_name: flame
+    volumes:
+      - /opt/flame:/app/data
+      - /var/run/docker.sock:/var/run/docker.sock # optional but required for Docker integration
+    ports:
+      - "3000:5005"
+    secrets:
+      - password # optional but required for (1)
+    environment:
+      - PASSWORD=flame_password
+      - PASSWORD_FILE=/run/secrets/password # optional but required for (1)
+    restart: unless-stopped
+
+secrets:
+  password:
+    file: ./password
+
+volumes:
+  uptime-kuma:
+  portainer_data:
+    external: true
