@@ -13,7 +13,7 @@ docker update --cpu-shares="2" $container_name
 docker update --memory="128m" $container_name
 
 # Minimaler Swap-Speicher
-docker update --memory-swap="32m" $container_name
+docker update --memory-swap="228m" $container_name
 
 # Geringste CFS-Zeitscheibe (z.B. 1ms) und Quotendauer auf Minimum setzen
 docker update --cpu-period="100000" --cpu-quota="1000" $container_name
