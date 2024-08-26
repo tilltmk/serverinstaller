@@ -1,65 +1,59 @@
 # 🚀 Server Installer
 
-This repository contains scripts to automate the installation and configuration of a Linux server. The scripts include the setup of Docker, Docker Compose, Git, and other useful tools. Additionally, an XFCE desktop environment will be installed.
+Dieses Repository enthält Skripte zur Automatisierung der Installation und Konfiguration eines Linux-Servers. Die Skripte umfassen die Einrichtung von Docker, Docker Compose, Git und anderen nützlichen Tools. Zusätzlich wird eine XFCE-Desktop-Umgebung installiert.
 
-## 📂 Contents
+## 📂 Inhalte
 
-- **`debian.sh`**: The main script for installing and configuring the server on Debian-based distributions.
-- **`opensuse.sh`**: The main script for installing and configuring the server on openSUSE.
-- **`specific-install-instructions.sh`**: An optional script containing specific installation instructions for additional software or configurations that apply across multiple distributions.
-- **`docker-compose.yml`**: A sample Docker Compose file to set up your Docker environment.
+- **`debian.sh`**: Das Hauptskript für die Installation und Konfiguration des Servers auf Debian-basierten Distributionen.
+- **`specific-install-instructions.sh`**: Ein optionales Skript mit spezifischen Installationsanweisungen für zusätzliche Software oder Konfigurationen, die distributionsübergreifend gelten.
+- **`docker-compose.yml`**: Eine Beispiel-Docker-Compose-Datei zur Einrichtung deiner Docker-Umgebung.
 
-## 🛠️ Requirements
+## 🛠️ Anforderungen
 
-- A compatible Linux distribution (Debian-based, openSUSE, etc.)
-- Root access to the system
+- Eine kompatible Linux-Distribution (Debian-basiert)
+- Root-Zugriff auf das System
 
 > [!WARNING]   
-> Please ensure you have root privileges before running the script. Without proper permissions, the installation will fail.
+> Bitte stelle sicher, dass du über Root-Rechte verfügst, bevor du das Skript ausführst. Ohne die entsprechenden Berechtigungen schlägt die Installation fehl.
 
 ## 🚀 Installation
 
-1. **Clone this repository:**
+1. **Repository klonen:**
    ```bash
    git clone https://github.com/tilltmk/serverinstaller.git
    cd serverinstaller
    ```
 
-2. **Choose the appropriate installation script for your distribution:**
-   - For Debian-based systems:
+2. **Das entsprechende Installationsskript für dein System auswählen:**
+   - Für Debian-basierte Systeme:
      ```bash
      chmod +x debian.sh
      ./debian.sh
      ```
-   - For openSUSE systems:
-     ```bash
-     chmod +x opensuse.sh
-     ./opensuse.sh
-     ```
 
-3. **Run the script as the root user.**
+3. **Das Skript als Root-Benutzer ausführen.**
 
-4. **Optional:** If there is a `specific-install-instructions.sh` file in the directory, it will be automatically executed after the main installation completes.
+4. **Optional:** Wenn eine `specific-install-instructions.sh`-Datei im Verzeichnis vorhanden ist, wird diese nach Abschluss der Hauptinstallation automatisch ausgeführt.
 
 > [!NOTE]  
-> The `specific-install-instructions.sh` script is useful for executing custom setup tasks that are specific to your environment.
+> Das `specific-install-instructions.sh`-Skript ist nützlich, um benutzerdefinierte Einrichtungsschritte auszuführen, die spezifisch für deine Umgebung sind.
 
 ## 🌟 Features
 
-- **Automatic Updates:** Security updates are automatically installed to keep your system secure.
-- **ClamAV Antivirus:** A virus scanner that is activated and kept updated automatically.
-- **AppArmor:** A security framework that is installed and enabled by default.
-- **Docker & Docker Compose:** For container orchestration.
-- **XFCE Desktop Environment and Lightdm:** A lightweight desktop environment suitable for remote management.
-- **German Keyboard Layout and Locale:** The system will be configured to use the German keyboard layout and locale.
-- **Nano as Default Editor:** `nano` will be set as the default text editor.
+- **Automatische Updates:** Sicherheitsupdates werden automatisch installiert, um dein System sicher zu halten.
+- **ClamAV Antivirus:** Ein Virenscanner, der aktiviert und automatisch aktualisiert wird.
+- **AppArmor:** Ein Sicherheitsframework, das standardmäßig installiert und aktiviert wird.
+- **Docker & Docker Compose:** Zur Orchestrierung von Containern.
+- **XFCE Desktop Environment und Lightdm:** Eine leichtgewichtige Desktop-Umgebung, die sich für die Fernverwaltung eignet.
+- **Deutsches Tastaturlayout und Locale:** Das System wird so konfiguriert, dass es das deutsche Tastaturlayout und die deutsche Locale verwendet.
+- **Nano als Standardeditor:** `nano` wird als Standard-Texteditor festgelegt.
 
 > [!TIP]  
-> The scripts are modular, so you can easily adapt them to fit your specific requirements by modifying the provided `specific-install-instructions.sh`.
+> Die Skripte sind modular aufgebaut, sodass du sie leicht an deine spezifischen Anforderungen anpassen kannst, indem du die bereitgestellte `specific-install-instructions.sh` modifizierst.
 
-## 📜 License
+## 📜 Lizenz
 
-This project is licensed under the MIT License. See the `LICENSE` file for more details.
+Dieses Projekt ist unter der MIT-Lizenz lizenziert. Siehe die `LICENSE`-Datei für weitere Details.
 
 > [!IMPORTANT]  
-> Contributions are welcome! If you find any issues or have suggestions, feel free to open an issue or submit a pull request.
+> Beiträge sind willkommen! Wenn du Probleme findest oder Vorschläge hast, eröffne gerne ein Issue oder reiche einen Pull Request ein.
