@@ -85,11 +85,11 @@
     "key": "",
     "secret": "",
     "ccxt_config": {
-      "rateLimit": 1200,
+      "rateLimit": 60,
       "enableRateLimit": true
     },
     "ccxt_async_config": {
-      "rateLimit": 1200,
+      "rateLimit": 60,
       "enableRateLimit": true
     },
     "amend_last_stake_amount": false
