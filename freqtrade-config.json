@@ -18,7 +18,7 @@
     }
   ],
   "stake_currency": "USDT",
-  "stake_amount": 40,
+  "stake_amount": "unlimited",
   "max_open_trades": 1,
   "dry_run": false,
   "cancel_open_orders_on_exit": true,
@@ -33,7 +33,7 @@
     "unit": "minutes"
   },
   "grinding_enable": true,
-  "tradable_balance_ratio": 0.999,
+  "tradable_balance_ratio": 0.9999,
   "force_entry_enable": true,
   "initial_state": "running",
   "timeframe": "5m",
